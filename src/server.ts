@@ -22,7 +22,7 @@ import validUrl from "valid-url";
       res.status(200).sendFile(filteredPath);
       res.on("end", () => deleteLocalFiles([filteredPath]));
     } else {
-      return res.status(500).send({ error: "Unable to process this request" });
+      return res.status(400).send({ error: "Unable to process this request" });
     }
   });
 
